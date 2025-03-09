@@ -19,7 +19,8 @@ final class ChainOfAgentsViewModel: ObservableObject {
     @Published var managerMessage: String = ""
     @Published var pageCount: Int = 0
     @Published var totalChunks: Int = 0
-    @Published var useOnDeviceProcessing = false
+    @Published var useOnDeviceProcessing = true
+    @Published var useChatMode = true
 
     let llmManager = LLMManager()
     private let chunkSize = 2000
@@ -85,7 +86,8 @@ final class ChainOfAgentsViewModel: ObservableObject {
                 if await self.isServerAvailable() {
                     await self.processWithServer(pdfURL: pdfURL)
                 } else {
-                    self.error = "Server not available. Please make sure the API server is running."
+                    // TODO: remove server based logic...
+                    // self.error = "Server not available. Please make sure the API server is running."
                 }
             }
 

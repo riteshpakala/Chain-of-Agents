@@ -14,11 +14,14 @@ import MLXRandom
 @Observable
 @MainActor
 final class ManagerAgent {
-    private let modelConfiguration = ModelRegistry.llama3_2_3B_4bit
+    private let modelConfiguration = LLMModels.DeepSeek.Local.r1_distill_qwen_nano
     private let generateParameters = GenerateParameters(temperature: 0.3)
     private let systemPrompt = """
     You are a manager agent responsible for synthesizing information from multiple workers.
     Your task is to combine their analyses into a coherent, comprehensive response that directly answers the user's query.
+    """
+    private let systemAssistantPrompt = """
+    You are a helpful assistant.
     """
 
     private enum LoadState {
@@ -32,6 +35,7 @@ final class ManagerAgent {
         switch loadState {
         case .idle:
             MLX.GPU.set(cacheLimit: 20 * 1024 * 1024)
+            
             let modelContainer = try await LLMModelFactory.shared.loadContainer(
                 configuration: modelConfiguration
             )
@@ -63,6 +67,34 @@ final class ManagerAgent {
         // 3. Generate the updated context using the model
         let messages = [
             ["role": "system", "content": systemPrompt],
+            ["role": "user", "content": prompt]
+        ]
+
+        let result = try await modelContainer.perform { [messages] context in
+            let input = try await context.processor.prepare(input: .init(messages: messages))
+            return try MLXLMCommon.generate(
+                input: input,
+                parameters: generateParameters,
+                context: context
+            ) { _ in
+                return .more
+            }
+        }
+        // 4. Return the updated context
+        return result.output
+    }
+    
+    func updateSingleContext(currentContext: String, workerResponse: String, query: String) async throws -> String {
+        let modelContainer = try await load()
+        MLXRandom.seed(UInt64(Date.timeIntervalSinceReferenceDate * 1000))
+
+        let prompt = """
+             \(query)
+             """
+
+        // 3. Generate the updated context using the model
+        let messages = [
+            ["role": "system", "content": systemAssistantPrompt],
             ["role": "user", "content": prompt]
         ]
 

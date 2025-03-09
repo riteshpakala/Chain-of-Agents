@@ -50,4 +50,8 @@ final class LLMManager {
     func updateContext(managerContext: String, workerResponse: String, query: String) async throws -> String {
         try await manager.updateContext(currentContext: managerContext, workerResponse: workerResponse, query: query)
     }
+    
+    func updateSingleContext(managerContext: String, workerResponse: String, query: String) async throws -> String {
+        try await manager.updateSingleContext(currentContext: managerContext, workerResponse: workerResponse, query: query)
+    }
 }

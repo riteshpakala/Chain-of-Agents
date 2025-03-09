@@ -14,7 +14,7 @@ import MLXRandom
 @Observable
 @MainActor
 final class WorkerAgent {
-    private let modelConfiguration = ModelRegistry.llama3_2_3B_4bit
+    private let modelConfiguration = LLMModels.DeepSeek.Local.r1_distill_qwen_nano
     private let generateParameters = GenerateParameters(temperature: 0.3)
     private let systemPrompt = """
     You are a worker agent responsible for analyzing a portion of a document.
@@ -35,11 +35,15 @@ final class WorkerAgent {
         switch loadState {
         case .idle:
             MLX.GPU.set(cacheLimit: 20 * 1024 * 1024)
+            
             let modelContainer = try await LLMModelFactory.shared.loadContainer(
                 configuration: modelConfiguration
             )
 
             loadState = .loaded(modelContainer)
+            
+            print("{TEST} Model loaded successfully.")
+            
             return modelContainer
 
         case .loaded(let modelContainer):

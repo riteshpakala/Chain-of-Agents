@@ -9,10 +9,19 @@
 /* Begin PBXBuildFile section */
 		0A4717BF2D4A294C00D9F07F /* MLXLLM in Frameworks */ = {isa = PBXBuildFile; productRef = 0A4717BE2D4A294C00D9F07F /* MLXLLM */; };
 		0A4717C12D4A294C00D9F07F /* MLXLMCommon in Frameworks */ = {isa = PBXBuildFile; productRef = 0A4717C02D4A294C00D9F07F /* MLXLMCommon */; };
+		714096C62D7D30C5007F543D /* SandKit in Frameworks */ = {isa = PBXBuildFile; productRef = 714096C52D7D30C5007F543D /* SandKit */; };
+		714096C92D7D30DD007F543D /* Granite in Frameworks */ = {isa = PBXBuildFile; productRef = 714096C82D7D30DD007F543D /* Granite */; };
+		714096CB2D7D30DF007F543D /* GraniteUI in Frameworks */ = {isa = PBXBuildFile; productRef = 714096CA2D7D30DF007F543D /* GraniteUI */; };
+		714096D42D7D3347007F543D /* MarqueKit in Frameworks */ = {isa = PBXBuildFile; productRef = 714096D32D7D3347007F543D /* MarqueKit */; };
+		7180D2E92D7DB9D900879D28 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 7180D2E82D7DB9D900879D28 /* MarkdownUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0A62D5682D490C0C00C7AE4F /* ChainOfAgents.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChainOfAgents.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		714096C32D7D30BA007F543D /* SandKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SandKit; path = /Users/ritesh/Documents/projects/Nea/SandKit; sourceTree = "<absolute>"; };
+		714096C72D7D30D6007F543D /* Granite */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Granite; path = ../Granite; sourceTree = SOURCE_ROOT; };
+		714096DB2D7D363C007F543D /* MarqueKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = MarqueKit; path = ../MarqueKit; sourceTree = SOURCE_ROOT; };
+		71C59F0E2D7E117400A2F118 /* mlx-swift-examples */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "mlx-swift-examples"; path = "/Users/ritesh/Documents/ml/repositories/mlx-swift-examples"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -28,7 +37,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				714096C62D7D30C5007F543D /* SandKit in Frameworks */,
+				7180D2E92D7DB9D900879D28 /* MarkdownUI in Frameworks */,
+				714096C92D7D30DD007F543D /* Granite in Frameworks */,
+				714096CB2D7D30DF007F543D /* GraniteUI in Frameworks */,
 				0A4717C12D4A294C00D9F07F /* MLXLMCommon in Frameworks */,
+				714096D42D7D3347007F543D /* MarqueKit in Frameworks */,
 				0A4717BF2D4A294C00D9F07F /* MLXLLM in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -39,7 +53,12 @@
 		0A62D55F2D490C0C00C7AE4F = {
 			isa = PBXGroup;
 			children = (
+				71C59F0E2D7E117400A2F118 /* mlx-swift-examples */,
+				714096DB2D7D363C007F543D /* MarqueKit */,
+				714096C72D7D30D6007F543D /* Granite */,
+				714096C32D7D30BA007F543D /* SandKit */,
 				0A62D56A2D490C0C00C7AE4F /* ChainOfAgents */,
+				714096C42D7D30C5007F543D /* Frameworks */,
 				0A62D5692D490C0C00C7AE4F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,6 +69,13 @@
 				0A62D5682D490C0C00C7AE4F /* ChainOfAgents.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		714096C42D7D30C5007F543D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,6 +100,11 @@
 			packageProductDependencies = (
 				0A4717BE2D4A294C00D9F07F /* MLXLLM */,
 				0A4717C02D4A294C00D9F07F /* MLXLMCommon */,
+				714096C52D7D30C5007F543D /* SandKit */,
+				714096C82D7D30DD007F543D /* Granite */,
+				714096CA2D7D30DF007F543D /* GraniteUI */,
+				714096D32D7D3347007F543D /* MarqueKit */,
+				7180D2E82D7DB9D900879D28 /* MarkdownUI */,
 			);
 			productName = ChainOfAgents;
 			productReference = 0A62D5682D490C0C00C7AE4F /* ChainOfAgents.app */;
@@ -105,6 +136,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				0A4717BD2D4A294C00D9F07F /* XCRemoteSwiftPackageReference "mlx-swift-examples" */,
+				7180D2E72D7DB9D900879D28 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 0A62D5692D490C0C00C7AE4F /* Products */;
@@ -260,12 +292,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = ChainOfAgents/ChainOfAgents.entitlements;
+				CODE_SIGN_ENTITLEMENTS = ChainOfAgents/Resources/ChainOfAgents.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"ChainOfAgents/Preview Content\"";
-				DEVELOPMENT_TEAM = YQZQG7N4WG;
+				DEVELOPMENT_ASSET_PATHS = "\"ChainOfAgents/Resources/Preview Content\"";
+				DEVELOPMENT_TEAM = VVB345V7Z8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -275,7 +307,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rudrankriyam.ChainOfAgents;
+				PRODUCT_BUNDLE_IDENTIFIER = nyc.stoic.ChainOfAgents;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -287,12 +319,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = ChainOfAgents/ChainOfAgents.entitlements;
+				CODE_SIGN_ENTITLEMENTS = ChainOfAgents/Resources/ChainOfAgents.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"ChainOfAgents/Preview Content\"";
-				DEVELOPMENT_TEAM = YQZQG7N4WG;
+				DEVELOPMENT_ASSET_PATHS = "\"ChainOfAgents/Resources/Preview Content\"";
+				DEVELOPMENT_TEAM = VVB345V7Z8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -302,7 +334,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rudrankriyam.ChainOfAgents;
+				PRODUCT_BUNDLE_IDENTIFIER = nyc.stoic.ChainOfAgents;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -341,6 +373,14 @@
 				minimumVersion = 2.21.2;
 			};
 		};
+		7180D2E72D7DB9D900879D28 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/gonzalezreal/swift-markdown-ui";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.4.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -353,6 +393,27 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0A4717BD2D4A294C00D9F07F /* XCRemoteSwiftPackageReference "mlx-swift-examples" */;
 			productName = MLXLMCommon;
+		};
+		714096C52D7D30C5007F543D /* SandKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SandKit;
+		};
+		714096C82D7D30DD007F543D /* Granite */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Granite;
+		};
+		714096CA2D7D30DF007F543D /* GraniteUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = GraniteUI;
+		};
+		714096D32D7D3347007F543D /* MarqueKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MarqueKit;
+		};
+		7180D2E82D7DB9D900879D28 /* MarkdownUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7180D2E72D7DB9D900879D28 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
+			productName = MarkdownUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
